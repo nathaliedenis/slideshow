@@ -1,0 +1,60 @@
+.slider-container {
+  margin: 0 auto;
+  width: 100vw;
+  height: 39.285vw;
+  position: relative;
+  overflow: hidden;
+}
+.slider {
+  display: flex;
+  height: 100%;
+}
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide svg{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+svg.slide1{
+  background-image: url('images/environnement.jpg');
+}
+svg.slide2{
+  background-image: url('images/beaute.jpg');
+}
+svg.slide3{
+  background-image: url('images/tourisme.jpg');
+}
+svg.slide4{
+  background-image: url('images/ingenierie.jpg');
+}
+.move-path {
+  stroke: white;
+  fill: none;
+  stroke-width: 3;
+}
+
+.slide.active .move-path{
+  animation-name: letter-animation;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.slide:not(.active) .move-path {
+  stroke-dasharray: 0 !important;
+  stroke-dashoffset: 0 !important;
+}
+
+@keyframes letter-animation {
+  to {
+      stroke-dashoffset: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+	.move-path {
+		stroke-width: 5;
+	}
+}
